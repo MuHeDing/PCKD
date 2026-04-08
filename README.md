@@ -38,7 +38,7 @@ This leads to more **discriminative representations** and improved generalizatio
 
 ## 🚀 Method
 
-<img src="./assets/framework.png">
+<img src="./assets/framework.pdf">
 
 Given an input, the teacher provides a **preview signal**, which guides the student to learn category-aware representations.
 
