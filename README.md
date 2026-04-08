@@ -29,8 +29,8 @@ While mainstream Knowledge Distillation (KD) methods successfully transfer knowl
 
 Our framework enhances student learning through two core innovations:
 
-- **Category Contrastive Learning:** It distills structural knowledge by modeling both instance-level feature correspondence and the relationships between instance features and category centers. This explicit optimization yields highly discriminative category centers and better classification accuracy.
-- **Dynamic Preview Strategy:** Unlike existing methods that treat all samples equally or curriculum learning that simply drops hard samples, PCKD dynamically determines learning weights based on sample difficulty. It assigns a smaller weight to hard instances—acting as a "preview"—to gently and effectively guide the student's training.
+- **Category Contrastive Learning for Knowledge Distillation:** It distills structural knowledge by modeling both instance-level feature correspondence and the relationships between instance features and category centers. This explicit optimization yields highly discriminative category centers and better classification accuracy.
+- **Preview-based Learning Strategy:** Unlike existing methods that treat all samples equally or curriculum learning that simply drops hard samples, PCKD dynamically determines learning weights based on sample difficulty. It assigns a smaller weight to hard instances—acting as a "preview"—to gently and effectively guide the student's training.
 
 Extensive experiments demonstrate that PCKD achieves state-of-the-art performance across several challenging datasets, including **CIFAR-100, ImageNet, and Pascal VOC**.
 
