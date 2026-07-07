@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local reference docs
+CRD_README.md
+
+# Environments
+.env
+.venv/
+env/
+venv/
+
+# Datasets
+data/
+datasets/
+cifar-100-python/
+tiny-imagenet-200/
+ImageNet/
+imagenet/
+
+# Checkpoints and experiment outputs
+save/
+checkpoints/
+checkpoint/
+runs/
+logs/
+results/
+output/
+outputs/
+tensorboard/
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.npy
+*.npz
+
+# Archives
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.rar
+
+# Editors and system files
+.idea/
+.vscode/
+.DS_Store

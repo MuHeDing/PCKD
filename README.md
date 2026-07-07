@@ -23,6 +23,8 @@ PCKD addresses these issues with two components:
 - **Category Contrastive Learning for Knowledge Distillation (CKD)**: distills feature representations, category centers, and their correlations. In code, the core category contrastive loss is implemented as `CategoryConLoss` in `helper/losses.py`.
 - **Preview-based Learning Strategy**: dynamically weights each sample according to its difficulty. Hard samples receive smaller weights early in training and gradually contribute more as training proceeds. The weighting logic is implemented in the `pckd` branch of `helper/loops.py`.
 
+![PCKD framework](assets/framework2.png)
+
 The paper evaluates PCKD on CIFAR-100, ImageNet, STL-10, and TinyImageNet. This code release focuses on the CIFAR-100 training pipeline and related KD baselines inherited from the RepDistiller/CRD codebase.
 
 ## Code Structure
@@ -35,7 +37,6 @@ The paper evaluates PCKD on CIFAR-100, ImageNet, STL-10, and TinyImageNet. This 
 - `dataset/cifar100.py`: CIFAR-100 dataloader wrappers.
 - `models/`: ResNet, WideResNet, VGG, MobileNetV2, and ShuffleNet backbones.
 - `distiller_zoo/`: baseline KD losses such as KD, FitNet, AT, SP, CC, VID, RKD, PKT, AB, FT, FSP, KDSVD, and NST.
-- `CRD_README.md`: original RepDistiller/CRD README kept for codebase lineage and baseline reference.
 
 Datasets, pretrained teacher models, checkpoints, TensorBoard logs, and experiment outputs are not included in this release.
 
@@ -93,11 +94,11 @@ Other KD baselines inherited from RepDistiller/CRD can also be run by changing `
 
 PCKD improves over KD and strong distillation baselines on CIFAR-100 for both same-family and heterogeneous teacher/student pairs. The paper also reports:
 
+![CIFAR-100 results](assets/cifar-100.png)
+
 - ImageNet: ResNet34 teacher to ResNet18 student, with 72.01 top-1 and 90.69 top-5 accuracy.
 - Transfer learning: CIFAR-100 to STL-10 and TinyImageNet using ResNet110 teacher and ResNet20 student.
 - Ablations: CKD, preview strategy, PCKD without `L_KD`, comparison with focal loss, and comparison with classic curriculum learning.
-
-See `MinerU_markdown_202607071951054_fb58b561.md` for the paper text and tables included with this release.
 
 ## Citation
 
@@ -118,4 +119,4 @@ This work is built on the following repositories. Thanks to their great work.
 
 - [RepDistiller](https://github.com/HobbitLong/RepDistiller/tree/master), for [Contrastive Representation Distillation](http://arxiv.org/abs/1910.10699) (ICLR 2020).
 - [HSAKD](https://github.com/winycg/HSAKD), for [Hierarchical Self-supervised Augmented Knowledge Distillation](https://www.ijcai.org/proceedings/2021/0168.pdf) (IJCAI 2021)
-- [ICKD](https://github.com/ADLab-AutoDrive/ICKD), for [Exploring Inter-Channel Correlation for Diversity-preserved Knowledge Distillation](ICCV 2021).
+- [ICKD](https://github.com/ADLab-AutoDrive/ICKD), for [Exploring Inter-Channel Correlation for Diversity-preserved Knowledge Distillation](https://arxiv.org/abs/2202.03680).
