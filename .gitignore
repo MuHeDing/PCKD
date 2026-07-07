@@ -9,7 +9,7 @@ __pycache__/
 # Local reference docs
 CRD_README.md
 MinerU_markdown_*.md
-
+zaijing_README.md
 # Environments
 .env
 .venv/

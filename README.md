@@ -24,11 +24,7 @@ Liqiang Nie<sup>1</sup>
     <img src="https://img.shields.io/badge/Paper-TCSVT%202025-blue" alt="IEEE TCSVT"></a>
 </div>
 
-## PCKD
-
-This repository contains the implementation of our TCSVT 2025 paper.
-
-## Overview
+## :bulb: Overview
 
 Knowledge distillation transfers knowledge from a large teacher network to a compact student network. Existing methods usually align instance-level logits or features, but they often ignore two useful signals:
 
@@ -44,19 +40,8 @@ PCKD addresses these issues with two components:
 
 The paper evaluates PCKD on CIFAR-100, ImageNet, STL-10, and TinyImageNet. This code release focuses on the CIFAR-100 training pipeline and related KD baselines inherited from the RepDistiller/CRD codebase.
 
-## Installation
 
-The original codebase was developed with PyTorch and CUDA. A typical setup is:
-
-```bash
-conda create -n pckd python=3.8 -y
-conda activate pckd
-pip install -r requirements.txt
-```
-
-Install a PyTorch build compatible with your CUDA version if it is not already included in your environment.
-
-## Data and Teacher Checkpoints
+## :open_file_folder: Data and Teacher Checkpoints
 
 Before training a student, prepare:
 
@@ -74,14 +59,11 @@ save/models/<teacher_run_name>/<teacher_model>_best.pth
 For example:
 
 ```text
-save/models/resnet110_cifar100_lr_0.05_decay_0.0005_trial_0/resnet110_best.pth
+save/models/wrn_40_2_cifar100_lr_0.05_decay_0.0005_trial_0/wrn_40_2_best.pth
 ```
 
-## Running PCKD on CIFAR-100
 
-Run commands from the repository root.
-
-### WRN-40-2 teacher to WRN-16-2 student
+### :computer: WRN-40-2 Teacher to WRN-16-2 Student
 
 ```bash
 python train_student.py \
@@ -92,14 +74,13 @@ python train_student.py \
   --dataset cifar100
 ```
 
-## Results Reported in the Paper
+## :bar_chart: Results Reported in the Paper
 
 PCKD improves over KD and strong distillation baselines on CIFAR-100 for both same-family and heterogeneous teacher/student pairs. The paper also reports:
 
 ![CIFAR-100 results](assets/cifar-100.png)
 
-
-## Citation
+## :hugs: Citation
 
 If you find this repository useful, please cite:
 
@@ -112,7 +93,7 @@ If you find this repository useful, please cite:
 }
 ```
 
-## Acknowledgement
+## :pray: Acknowledgement
 
 This work is built on the following repositories. Thanks to their great work.
 
