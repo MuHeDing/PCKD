@@ -27,19 +27,6 @@ PCKD addresses these issues with two components:
 
 The paper evaluates PCKD on CIFAR-100, ImageNet, STL-10, and TinyImageNet. This code release focuses on the CIFAR-100 training pipeline and related KD baselines inherited from the RepDistiller/CRD codebase.
 
-## Code Structure
-
-- `train_student.py`: main CIFAR-100 student distillation entry point. Use `--distill pckd` to run PCKD.
-- `train_teacher.py`: teacher training script.
-- `helper/losses.py`: PCKD losses, including `CategoryConLoss`, `AlignLoss`, and supporting contrastive modules.
-- `helper/loops.py`: training and validation loops; the `pckd` branch computes the preview-weighted PCKD objective.
-- `dataset/cifar.py`: CIFAR dataset implementation with four rotated views for category contrastive training.
-- `dataset/cifar100.py`: CIFAR-100 dataloader wrappers.
-- `models/`: ResNet, WideResNet, VGG, MobileNetV2, and ShuffleNet backbones.
-- `distiller_zoo/`: baseline KD losses such as KD, FitNet, AT, SP, CC, VID, RKD, PKT, AB, FT, FSP, KDSVD, and NST.
-
-Datasets, pretrained teacher models, checkpoints, TensorBoard logs, and experiment outputs are not included in this release.
-
 ## Installation
 
 The original codebase was developed with PyTorch and CUDA. A typical setup is:
@@ -88,17 +75,12 @@ python train_student.py \
   --dataset cifar100
 ```
 
-Other KD baselines inherited from RepDistiller/CRD can also be run by changing `--distill`; this README focuses on the PCKD setting.
-
 ## Results Reported in the Paper
 
 PCKD improves over KD and strong distillation baselines on CIFAR-100 for both same-family and heterogeneous teacher/student pairs. The paper also reports:
 
 ![CIFAR-100 results](assets/cifar-100.png)
 
-- ImageNet: ResNet34 teacher to ResNet18 student, with 72.01 top-1 and 90.69 top-5 accuracy.
-- Transfer learning: CIFAR-100 to STL-10 and TinyImageNet using ResNet110 teacher and ResNet20 student.
-- Ablations: CKD, preview strategy, PCKD without `L_KD`, comparison with focal loss, and comparison with classic curriculum learning.
 
 ## Citation
 
