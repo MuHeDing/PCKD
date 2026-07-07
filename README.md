@@ -1,15 +1,32 @@
-# PCKD
+<div align="center">
+<h2 align="center">
+    <b>Preview-Based Category Contrastive Learning for Knowledge Distillation</b>
+</h2>
 
-This repository contains the implementation of:
+<div>
+Muhe Ding<sup>1</sup>,
+Jianlong Wu<sup>1</sup>,
+Xue Dong<sup>2</sup>,
+Xiaojie Li<sup>1</sup>,
+Pengda Qin<sup>3</sup>,
+Tian Gan<sup>4</sup>,
+Liqiang Nie<sup>1</sup>
+</div>
+<br>
+<sup>1</sup>Department of Computer Science and Technology, Harbin Institute of Technology (Shenzhen), China<br>
+<sup>2</sup>School of Software, Tsinghua University, China<br>
+<sup>3</sup>Alibaba Group, China<br>
+<sup>4</sup>School of Computer Science and Technology, Shandong University, China<br>
+</div>
 
-**Preview-based Category Contrastive Learning for Knowledge Distillation**
+<div align="center">
+    <a href="https://ieeexplore.ieee.org/document/10880570" target="_blank">
+    <img src="https://img.shields.io/badge/Paper-TCSVT%202025-blue" alt="IEEE TCSVT"></a>
+</div>
 
-Muhe Ding, Jianlong Wu, Xue Dong, Xiaojie Li, Pengda Qin, Tian Gan, and Liqiang Nie.
+## PCKD
 
-Accepted by **IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), 2025**.
-
-- Paper: https://arxiv.org/abs/2410.14143
-- IEEE: https://ieeexplore.ieee.org/document/10880570
+This repository contains the implementation of our TCSVT 2025 paper.
 
 ## Overview
 
